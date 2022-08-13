@@ -1,0 +1,142 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "E:\\Work\\Lucas\\rugpull\\contracts\\bnbStaker.sol": {
+      "lastModificationDate": 1648626100197,
+      "contentHash": "bb972d712889ddb044cce818f2791e44",
+      "sourceName": "contracts/bnbStaker.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8"
+      ],
+      "artifacts": [
+        "BNBStaker",
+        "Claimable",
+        "Context",
+        "Ownable",
+        "SafeMath"
+      ]
+    },
+    "E:\\Work\\Lucas\\rugpull\\contracts\\ERC20.sol": {
+      "lastModificationDate": 1647258090702,
+      "contentHash": "b98cb472a6cd5f03085c455544b71712",
+      "sourceName": "contracts/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8"
+      ],
+      "artifacts": [
+        "Context",
+        "ERC20",
+        "Ownable",
+        "SafeMath"
+      ]
+    },
+    "E:\\Work\\Lucas\\rugpull\\contracts\\presale.sol": {
+      "lastModificationDate": 1648789544719,
+      "contentHash": "8a0c14a4c86b9f58d3d4a969cfefa5ec",
+      "sourceName": "contracts/presale.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8"
+      ],
+      "artifacts": [
+        "Claimable",
+        "Context",
+        "IERC20",
+        "Ownable",
+        "Presale"
+      ]
+    }
+  }
+}
