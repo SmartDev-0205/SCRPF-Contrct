@@ -31574,20 +31574,20 @@
                             }
                           },
                           {
-                            "bytecode": {
-                              "declaration": 2034,
-                              "isOffset": false,
-                              "isSlot": false,
-                              "src": "19705:8:0",
-                              "valueSize": 1
-                            }
-                          },
-                          {
                             "salt": {
                               "declaration": 2041,
                               "isOffset": false,
                               "isSlot": false,
                               "src": "19716:4:0",
+                              "valueSize": 1
+                            }
+                          },
+                          {
+                            "bytecode": {
+                              "declaration": 2034,
+                              "isOffset": false,
+                              "isSlot": false,
+                              "src": "19705:8:0",
                               "valueSize": 1
                             }
                           }
