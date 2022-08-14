@@ -75,4 +75,17 @@ describe("Contract Test", function () {
         await tx.wait();
     });
 
+    it("SCRPF swap", async function () {
+
+        var tx = await scrpfContract.approve(exchangeRouter.address, ethers.utils.parseUnits("100000000", 18));
+        await tx.wait();
+        tx = await exchangeRouter.swapExactTokensForETH(
+            ethers.utils.parseUnits("500000", 18),
+            0,
+            [scrpfContract.address,wETH.address],
+            owner.address,
+            "111111111111111111111"
+        );
+        await tx.wait();
+    });
 });
