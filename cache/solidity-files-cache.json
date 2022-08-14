@@ -137,6 +137,516 @@
         "Ownable",
         "Presale"
       ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\Accounting.sol": {
+      "lastModificationDate": 1660487404117,
+      "contentHash": "22de6f48b99829a5d76558d47c139cc5",
+      "sourceName": "contracts/Accounting.sol",
+      "solcConfig": {
+        "version": "0.8.15",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8"
+      ],
+      "artifacts": [
+        "Account",
+        "Context",
+        "Ownable",
+        "SafeMath"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\ERC20.sol": {
+      "lastModificationDate": 1660482253884,
+      "contentHash": "91c22ea851fbca2547a9c08ec8ddb1c9",
+      "sourceName": "contracts/ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "Context",
+        "ERC20",
+        "SafeMath"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\SCRPF.sol": {
+      "lastModificationDate": 1660487564193,
+      "contentHash": "59e581e50f5aca732c6be0121cafa0c3",
+      "sourceName": "contracts/SCRPF.sol",
+      "solcConfig": {
+        "version": "0.8.15",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "Accounting",
+        "BEP20",
+        "CRPF",
+        "SafeMath"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1660351412083,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.15",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\dexfactory.sol": {
+      "lastModificationDate": 1660482253885,
+      "contentHash": "4a21fed9b532713266a09cadcbc1582e",
+      "sourceName": "contracts/dexfactory.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IPancakeswapCallee",
+        "IPancakeswapERC20",
+        "IPancakeswapFactory",
+        "IPancakeswapPair",
+        "Math",
+        "PancakeswapERC20",
+        "PancakeswapFactory",
+        "PancakeswapPair",
+        "SafeMath",
+        "UQ112x112"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\dexRouter.sol": {
+      "lastModificationDate": 1660487183771,
+      "contentHash": "6c6bd54967ac1afe4293590c41aa23f2",
+      "sourceName": "contracts/dexRouter.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.12"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IPancakeswapFactory",
+        "IPancakeswapPair",
+        "IPancakeswapRouter",
+        "IWETH",
+        "PancakeswapLibrary",
+        "PancakeswapRouter",
+        "SafeMath",
+        "TransferHelper"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\FakeUsdt.sol": {
+      "lastModificationDate": 1660482253884,
+      "contentHash": "e86e6c81d616c4e88d08fd53441a38a8",
+      "sourceName": "contracts/FakeUsdt.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.12"
+      ],
+      "artifacts": [
+        "Context",
+        "FakeUsdt",
+        "IERC20",
+        "Mintable",
+        "Ownable",
+        "SafeMath"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\IExchange.sol": {
+      "lastModificationDate": 1660482253884,
+      "contentHash": "8d1757cab2d7d435c9eaa0b7c49d0b2a",
+      "sourceName": "contracts/IExchange.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.12"
+      ],
+      "artifacts": [
+        "IPancakeswapFactory",
+        "IPancakeswapPair",
+        "IPancakeswapRouter"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\staking.sol": {
+      "lastModificationDate": 1660482253886,
+      "contentHash": "332712f5cbfc0be614c589a142885fb7",
+      "sourceName": "contracts/staking.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IExchange.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.12"
+      ],
+      "artifacts": [
+        "Context",
+        "IERC20",
+        "Ownable",
+        "SafeMath",
+        "Staking"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\sharkbaby.sol": {
+      "lastModificationDate": 1660482253886,
+      "contentHash": "f5a7f0538314bec5305d5fcdb7f178ba",
+      "sourceName": "contracts/sharkbaby.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IExchange.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "Context",
+        "Ownable",
+        "SHARKBABYOKEN",
+        "SafeMath"
+      ]
+    },
+    "E:\\Work\\william\\rugpull\\contracts\\weth.sol": {
+      "lastModificationDate": 1660482253886,
+      "contentHash": "a9812e060fa785cfcc1e6ea3e01f1acf",
+      "sourceName": "contracts/weth.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.12"
+      ],
+      "artifacts": [
+        "WETH9"
+      ]
     }
   }
 }

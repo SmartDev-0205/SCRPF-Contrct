@@ -1,10 +1,16 @@
 const fs = require("fs");
 const colors = require("colors");
 const { ethers } = require("hardhat");
-const ERC20ABI =
-    require("../artifacts/contracts/ERC20.sol/ERC20.json").abi;
-const PresaleABI =
-    require("../artifacts/contracts/presale.sol/Presale.json").abi;
+const SCRPF = require("../artifacts/contracts/SCRPF.sol/CRPF.json").abi;
+const Router =
+    require("../interface/router.json").abi;
+
+const Account =
+    require("../artifacts/contracts/Accounting.sol/Account.json").abi;
+
+var scrpfContract;
+var accountingContract;
+
 async function main() {
     // get network
     let [owner] = await ethers.getSigners();
@@ -12,25 +18,21 @@ async function main() {
     let network = await owner.provider._networkPromise;
 
     //QE token deployment
-    const ERC20TOKEN = await ethers.getContractFactory("ERC20");
-    const tokenContract = await ERC20TOKEN.deploy("LUCKY SHIBA", "LShiba");
-    await tokenContract.deployed();
+    const ERC20TOKEN = await ethers.getContractFactory("CRPF");
+    scrpfContract = await ERC20TOKEN.deploy();
+    console.log("Contract address :", scrpfContract.address);
+    await scrpfContract.deployed();
 
     //presale deployment
+    const AccountingContract = await ethers.getContractFactory("Account");
+    accountingContract = await AccountingContract.deploy();
+    console.log("Contract address :", accountingContract.address);
+    console.log("Accounting contract was finished.");
+    await scrpfContract.setAccountingAddress(accountingContract.address);
 
-    var terms = {
-        vestingPrice: 30000 * 1000000, // 300000 QE/ETH // 1e6
-        vestingPeriod: 20 * 24 * 3600 , // 20 days
-        price: 3000 * 1000000 // 3000 QE/ETH // 1e6
-    }
-
-    terms.vestingPeriod += Number(((new Date())/1000).toFixed(0));
-
-    console.log(terms);
-
-    const PresaleContract = await ethers.getContractFactory("Presale");
-    const presaleContract = await PresaleContract.deploy(tokenContract.address, owner.address, terms);
-
+    // Get router contract 
+    const fantomeRouter = "0x10ed43c718714eb63d5aa57b78b54704e256024e";
+    
 
     // deployment result
     var contractObject = {
@@ -39,7 +41,7 @@ async function main() {
             abi: ERC20ABI
         },
         presale: {
-            address: presaleContract.address,
+            address: scrpfContract.address,
             abi: PresaleABI
         }
     }

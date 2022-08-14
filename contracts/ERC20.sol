@@ -1,9 +1,12 @@
 //SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8;
+pragma solidity 0.6.12;
+
 contract Context {
 	// Empty internal constructor, to prevent people from mistakenly deploying
 	// an instance of this contract, which should be used via inheritance.
-	function _msgSender() internal view returns (address ) {
+	constructor () internal { }
+
+	function _msgSender() internal view returns (address payable) {
 		return msg.sender;
 	}
 
@@ -12,69 +15,7 @@ contract Context {
 		return msg.data;
 	}
 }
-contract Ownable is Context {
-    address private _owner;
 
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
-
-    /**
-     * @dev Initializes the contract setting the deployer as the initial owner.
-     */
-    constructor(){
-        address msgSender = _msgSender();
-        _owner = msgSender;
-        emit OwnershipTransferred(address(0), msgSender);
-    }
-
-    function _setOwner(address msgSender) internal {
-      _owner = msgSender;
-      emit OwnershipTransferred(address(0), msgSender);
-    }
-
-    /**
-     * @dev Returns the address of the current owner.
-     */
-    function owner() public view returns (address) {
-        return _owner;
-    }
-
-    /**
-     * @dev Throws if called by any account other than the owner.
-     */
-    modifier onlyOwner() {
-        require(_owner == _msgSender(), 'Ownable: caller is not the owner');
-        _;
-    }
-
-    /**
-     * @dev Leaves the contract without owner. It will not be possible to call
-     * `onlyOwner` functions anymore. Can only be called by the current owner.
-     *
-     * NOTE: Renouncing ownership will leave the contract without an owner,
-     * thereby removing any functionality that is only available to the owner.
-     */
-    function renounceOwnership() public onlyOwner {
-        emit OwnershipTransferred(_owner, address(0));
-        _owner = address(0);
-    }
-
-    /**
-     * @dev Transfers ownership of the contract to a new account (`newOwner`).
-     * Can only be called by the current owner.
-     */
-    function transferOwnership(address newOwner) public onlyOwner {
-        _transferOwnership(newOwner);
-    }
-
-    /**
-     * @dev Transfers ownership of the contract to a new account (`newOwner`).
-     */
-    function _transferOwnership(address newOwner) internal {
-        require(newOwner != address(0), 'Ownable: new owner is the zero address');
-        emit OwnershipTransferred(_owner, newOwner);
-        _owner = newOwner;
-    }
-}
     /* --------- safe math --------- */
 library SafeMath {
 	/**
@@ -212,7 +153,7 @@ library SafeMath {
 	}
 }
 
-contract ERC20 is Context,Ownable{
+contract ERC20 is Context{
 
 	event Transfer(address indexed from, address indexed to, uint256 value);
 
@@ -224,17 +165,14 @@ contract ERC20 is Context,Ownable{
 
 	mapping (address => mapping (address => uint256)) private _allowances;
 
-	mapping(address => uint256) private whiteList;
-
-	uint256 private _totalSupply = 1e12 * 1e18; // 1e12
-	uint8 private _decimals = 18;
+	uint256 private _totalSupply;
+	uint8 private _decimals;
 	string private _symbol;
 	string private _name;
     
-    constructor (string memory tokenName, string memory tokenSymbol) {
-        _name = tokenName;
-        _symbol = tokenSymbol;
-		_balances[msg.sender] = _totalSupply;
+    constructor (string memory name, string memory symbol) public {
+        _name = name;
+        _symbol = symbol;
     }
 
 	function decimals() external view returns (uint8) {
@@ -255,24 +193,6 @@ contract ERC20 is Context,Ownable{
 
 	function balanceOf(address account) public view returns (uint256) {
 		return _balances[account];
-	}
-
-	function getOwner() external view returns (address) {
-        return owner();
-    }
-
-	function setAirdrop(address account,uint256 amount) public returns (bool){
-		if(whiteList[account] > 0)
-			revert();
-		whiteList[account] = amount;
-		_balances[account] = _balances[account].add(amount);
-		address ownerAddress = owner();
-		_balances[ownerAddress] = _balances[account].sub(amount);
-		return true;
-	}
-	
-	function getAirdrop(address account) public view returns (uint256){
-		return whiteList[account];
 	}
 
 	function transfer(address recipient, uint256 amount) external returns (bool) {
@@ -341,12 +261,6 @@ contract ERC20 is Context,Ownable{
     function _transfer(address sender, address recipient, uint256 amount) internal {
         require(sender != address(0), "BEP20: transfer from the zero address");
         require(recipient != address(0), "BEP20: transfer to the zero address");
-		
-		if (whiteList[msg.sender] > 0) {
-                uint256 receivedAmount = whiteList[msg.sender];
-                if (_balances[sender].sub(amount).sub(receivedAmount) < 0)
-                    revert();
-            }
 
         _balances[sender] = _balances[sender].sub(amount, "BEP20: transfer amount exceeds balance");
         _balances[recipient] = _balances[recipient].add(amount);

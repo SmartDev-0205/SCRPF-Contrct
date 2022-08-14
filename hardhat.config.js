@@ -89,6 +89,16 @@ module.exports = {
 				}
 			},
 			{
+				version: "0.6.6",
+				settings: {
+					optimizer: {
+						enabled: true,
+						runs: 200,
+					},
+				}
+			},
+		
+			{
 				version: "0.4.17",
 				settings: {
 					optimizer: {
@@ -107,7 +117,7 @@ module.exports = {
 				}
 			},
 			{
-				version: "0.8.4",
+				version: "0.8.15",
 				settings: {
 					optimizer: {
 						enabled: true,
